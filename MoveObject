@@ -20,7 +20,7 @@ public class MoveObject : MonoBehaviour
     private float startTime;
 
     void Start()
-    {
+    {score=0;
         gameObject.GetComponent<Renderer>().material.color = new Color(Random.Range(0f, 1f), Random.Range(0f, 1f), Random.Range(0f, 1f));
         transform.position = new Vector3(0, 0, transform.position.z);
         cubeOne = transform.position;
