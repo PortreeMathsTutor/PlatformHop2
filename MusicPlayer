@@ -1,0 +1,69 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+using UnityEngine.UI;
+public class MusicPlayer : MonoBehaviour
+{//I put the music player outside of the canvas that has the "DoNotDestroyOnLoad" script on it.
+
+    public AudioClip clip1;
+    public AudioClip clip2;
+    public AudioClip clip3;
+    public AudioClip clip4;
+    public AudioSource audioSource1;
+    private bool playClip1 = true;
+    private bool playClip2 = false;
+    private bool playClip3 = false;
+    private bool playClip4 = false;
+   public bool toggleMusic;
+    public Image m_Image;
+
+    void Start()
+    {
+
+    }
+ 
+  public void MusicToggle()
+    {
+        toggleMusic = !toggleMusic;
+    
+        if (toggleMusic)
+        {
+            m_Image.color = Color.white;
+   
+            if (!audioSource1.isPlaying & playClip1)
+            {
+                audioSource1.clip = clip1;
+                audioSource1.Play();
+                playClip1 = false;
+                playClip2 = true;
+            }
+
+            if (!audioSource1.isPlaying & playClip2)
+            {
+                audioSource1.clip = clip2;
+                audioSource1.Play();
+                playClip2 = false;
+                playClip3 = true;
+            }
+            if (!audioSource1.isPlaying & playClip3)
+            {
+                audioSource1.clip = clip3;
+                audioSource1.Play();
+                playClip3 = false;
+                playClip4 = true;
+            }
+            if (!audioSource1.isPlaying & playClip4)
+            {
+                audioSource1.clip = clip4;
+                audioSource1.Play();
+
+            }
+        }
+        else {
+            m_Image.color = Color.red;
+ 
+            audioSource1.Stop();
+        }
+
+    }
+}
