@@ -27,7 +27,7 @@ public class ScoreUpdator : MonoBehaviour
         if (score < 0) { score = 0; }
         scoreTex.text = "SCORE: " + score.ToString("0");
 
-        if (score > PlayerPrefs.GetInt("highScoreInt", 0))
+        if (score > PlayerPrefs.GetInt("HighScoreInt", 0))
         {
             PlayerPrefs.SetInt("HighScoreInt", score);
             highScore.text = "HIGHSCORE: " + score.ToString();
