@@ -20,7 +20,8 @@ public class MoveObject : MonoBehaviour
     private float startTime;
 
     void Start()
-    {score=0;
+    {
+        score = 0;
         gameObject.GetComponent<Renderer>().material.color = new Color(Random.Range(0f, 1f), Random.Range(0f, 1f), Random.Range(0f, 1f));
         transform.position = new Vector3(0, 0, transform.position.z);
         cubeOne = transform.position;
@@ -30,7 +31,7 @@ public class MoveObject : MonoBehaviour
         startTime = Time.time;
     }
 
-    void Update()
+    void FixedUpdate()
     {
         if (score>20) { journeyTime = 8; }
         if (score > 30) { journeyTime = 5; }
@@ -73,7 +74,7 @@ public class MoveObject : MonoBehaviour
             cubeOne = new Vector3(0, 0, transform.position.z);
 
             if (score < 80) { cubeTwo = transform.position + new Vector3(Random.Range(-0.3f, 0.3f), 0, 100); }
-            else { cubeTwo = transform.position + new Vector3(Random.Range(-0.4f, 0.4f), 0, 100); }
+            else { cubeTwo = transform.position + new Vector3(Random.Range(-0.35f, 0.35f), 0, 100); }
             gameObject.GetComponent<Renderer>().material.color = new Color(Random.Range(0f, 1f), Random.Range(0f, 1f), Random.Range(0f, 1f));
             
         }
