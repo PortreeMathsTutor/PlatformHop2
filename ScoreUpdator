@@ -8,7 +8,7 @@ public class ScoreUpdator : MonoBehaviour
 {
     public int score = 0;
 
-    public int highScoreInt = 0;
+    public int highScoreInt;
     public Text highScore;
     public Text scoreTex;
 
